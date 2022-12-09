@@ -1,24 +1,22 @@
 import {useState} from 'react'
 
-const Add = (props) => { 
-    const [journal, setJournal] = useState({date: '', title: '', entry: '', breath: true, body: true, breaks: true,grace: true, thoughts: true, connect: true, wins: true, help: true, moment: true})
+const Edit = (props) => {
+  const [journal, setJournal] = useState({...props.journal})
 
-    const handleChange = (event) => {
-     setJournal({...journal, [event.target.name]: event.target.value})
-    }
-    const handleChecked = (event) => {
-        setJournal({...journal, [event.target.name]: event.target.checked})
-       }
- 
-    const handleSubmit = (event) => {
-       event.preventDefault()
-       props.handleCreate(journal)
+  const handleChange = (event) => {
+    setJournal({...journal, [event.target.name]: event.target.value})
    }
-}
 
+   const handleChecked = (event) => {
+    setJournal({...journal, [event.target.name]: event.target.checked})
+   }
 
-return(
+   const handleSubmit = (event) => {
+      event.preventDefault()
+      props.handleEdit(journal)
+   }
 
+  return(
     <>
         
         <label>Take a breath and start writing.</label>
@@ -29,7 +27,7 @@ return(
                 <label>Title:</label>
                 <input type='text' name='title' onChange={handleChange}/>
                 <br/><br/>
-                <input type='text' name='entry' placeholder='Sup bruh?' onChange={handleChange}/>
+                <input type='text' name='entry' onChange={handleChange}/>
                 <br/><br/>
                 <label>I got of bed and took a deep breath in and out.</label>
                 <input type='checkbox' name='breath' onChange={handleChecked}/>
@@ -62,10 +60,10 @@ return(
                 Slider */}
 
 
-                <input type="submit"/>
-            </form>
-     </>
+            <input type="submit"/>
+        </form>
+    </>
   )
 }
 
-export default Add
+export default Edit
