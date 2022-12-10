@@ -1,6 +1,8 @@
 import {useState} from 'react'
 import Notepad from './CC'
 
+import { ImPencil } from "react-icons/im"
+
 const Edit = (props) => {
 
   const [journal, setJournal] = useState({...props.journal})
@@ -21,7 +23,7 @@ const Edit = (props) => {
   return (
     <>
       <details className="edit">
-          <summary>Edit Entry</summary>
+          <summary><ImPencil /></summary>
 
           <form onSubmit={handleSubmit}>
                 <label>Date: </label>
@@ -32,7 +34,7 @@ const Edit = (props) => {
                 <br/><br/>
                 <Notepad onChange={handleChange} value={journal.entry}/>
                 <br/><br/>
-                <label>I got of bed and took a deep breath in and out. </label>
+                <label>I got out of bed and took a deep breath in and out. </label>
                 <input type='checkbox' name='breath' onChange={handleChecked} value={journal.breath}/>
                 <br/><br/>
                 <label>I did something to support my body (sleep, eat, exercise). </label>
@@ -56,7 +58,7 @@ const Edit = (props) => {
                 <label>I asked for help when I needed it. </label>
                 <input type='checkbox' name='help' onChange={handleChecked} value={journal.help}/>
                 <br/><br/>
-                <label>I took things one moment and day at a time. </label>
+                <label>I took things one moment at a time. </label>
                 <input type='checkbox' name='moment' onChange={handleChecked} value={journal.moment}/>
                 <br/><br/>
                 {/* <label>How was your day overall? 1-100</label>

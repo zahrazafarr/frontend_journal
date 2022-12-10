@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 
 
-export default function Notepad() {
+const Notepad = () => {
     
     const [characterCount, ChangeCharacterCount] = React.useState(0);
   
@@ -11,12 +11,15 @@ export default function Notepad() {
 
     return (
       <div>
-        <p>{characterCount}/500</p>
+        <p>{characterCount}/800</p>
         <textarea
+          maxLength={800}
           rows={5}
           className="notepad"
           onChange={recalculate}
           input type='text' name='entry' placeholder='Take a breath and start writing...'/>
       </div>
     );
-  }
+}
+
+export default Notepad

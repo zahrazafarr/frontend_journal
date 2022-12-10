@@ -42,12 +42,20 @@ const App = () => {
     })
   }
 
+  const [show, setShow] = useState(false)
+  const [showAdd, setShowAdd] = useState(false)
+
+  const showJournal = (event) => {
+    setShow(display => !display)
+  }
+
+  const addEntry = (event) => {
+    setShowAdd(display => !display)
+  }
 
   useEffect(() => {
     getEntries()
   }, [])
-
-
 
   return (
 
@@ -55,18 +63,18 @@ const App = () => {
 
       <h1>Carely</h1>
 
-      <Add handleCreate={handleCreate}/>
-      
+      <button onClick={addEntry}>New Entry</button>
+      { showAdd && <Add handleCreate={handleCreate}/> }
+
+      <button onClick={showJournal}>Read Your Journal</button>
        {entries.map((entry) => {
 
                 return (
                   <>
 
-                  <Entries entry={entry} />
-
-                  <Edit entry={entry} handleEdit={handleEdit}/>
-
-                  <button onClick={handleDelete} value={entry._id}>ERASE</button>
+                  { show && <Entries entry={entry} />}
+                  { show && <Edit entry={entry} handleEdit={handleEdit}/> }
+                  { show && <button onClick={handleDelete} value={entry._id}>ERASE</button> }
 
                   </>
                 )
@@ -76,4 +84,4 @@ const App = () => {
  );
 }
 
-export default App;
+export default App

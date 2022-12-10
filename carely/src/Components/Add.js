@@ -1,5 +1,8 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
+import axios from 'axios'
+
 import Notepad from './CC'
+import Prompts from './Prompt'
 
 const Add = (props) => { 
 
@@ -33,12 +36,40 @@ const Add = (props) => {
        props.handleCreate(journal)
     }
 
+    const [prompts, setPrompts] = useState([])
+    const [show, setShow] = useState(false)
 
+    const getPrompts = () => {
+        axios.get('http://localhost:3000/prompts').then((response) => 
+        setPrompts(response.data), (err) => 
+        console.log(err)).catch((error) => 
+        console.log(error))
+    }
+
+    const showPrompt = (event) => {
+        setShow(display => !display)
+    }
+
+    useEffect(() => {
+        getPrompts()
+    }, [])
+    
+    
 
     return (
 
         <>
+           <button onClick={showPrompt}>Click me for Inspiration!</button>
+           <br/>
+           {prompts.map((prompt) => {
+            return (
+                <>
+             { show && <Prompts prompt={prompt}/> }
+             </>
+            )
+        })}
             <form onSubmit={handleSubmit}>
+                <br/>
                 <label>Date: </label>
                 <input type='text' name='date' placeholder="MM/DD/YYYY" onChange={handleChange}/>
                 <br/><br/>
@@ -47,7 +78,7 @@ const Add = (props) => {
                 <br/><br/>
                 <Notepad onChange={handleChange}/>
                 <br/><br/>
-                <label>I got of bed and took a deep breath in and out. </label>
+                <label>I got out of bed and took a deep breath in and out. </label>
                 <input type='checkbox' name='breath' onChange={handleChecked}/>
                 <br/><br/>
                 <label>I did something to support my body (sleep, eat, exercise). </label>
@@ -71,7 +102,7 @@ const Add = (props) => {
                 <label>I asked for help when I needed it. </label>
                 <input type='checkbox' name='help' onChange={handleChecked}/>
                 <br/><br/>
-                <label>I took things one moment and day at a time. </label>
+                <label>I took things one moment at a time. </label>
                 <input type='checkbox' name='moment' onChange={handleChecked}/>
                 <br/><br/>
                 {/* <label>How was your day overall? 1-100</label>
