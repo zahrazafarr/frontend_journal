@@ -2,7 +2,9 @@ const Entries = (props) => {
 
     return (
         <>
-        <h4>{props.entry.entry}</h4>
+        <h3>{props.entry.title}</h3>
+        <h5>{props.entry.date}</h5>
+        {/* <p>{props.entry.entry}</p> */}
         </>
     )
 }
