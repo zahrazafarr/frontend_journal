@@ -70,39 +70,39 @@ const Add = (props) => {
         })}
             <form onSubmit={handleSubmit}>
                 <br/>
-                <label>Date: </label>
+                <label htmlFor='date'>Date: </label>
                 <input type='text' name='date' placeholder="MM/DD/YYYY" onChange={handleChange}/>
                 <br/><br/>
-                <label>Title: </label>
+                <label htmlFor='title'>Title: </label>
                 <input type='text' name='title' onChange={handleChange}/>
                 <br/><br/>
                 <Notepad onChange={handleChange}/>
                 <br/><br/>
-                <label>I got out of bed and took a deep breath in and out. </label>
+                <label htmlFor='breath'>I got out of bed and took a deep breath in and out. </label>
                 <input type='checkbox' name='breath' onChange={handleChecked}/>
                 <br/><br/>
-                <label>I did something to support my body (sleep, eat, exercise). </label>
+                <label htmlFor='body'>I did something to support my body (sleep, eat, exercise). </label>
                 <input type='checkbox' name='body' onChange={handleChecked}/>
                 <br/><br/>
-                <label>I took breaks when I needed them to do something I enjoy. </label>
+                <label htmlFor='breaks'>I took breaks when I needed them to do something I enjoy. </label>
                 <input type='checkbox' name='breaks' onChange={handleChecked}/>
                 <br/><br/>
-                <label>I practiced self-compassion and gave myself grace. </label>
+                <label htmlFor='grace'>I practiced self-compassion and gave myself grace. </label>
                 <input type='checkbox' name='grace' onChange={handleChecked}/>
                 <br/><br/>
-                <label>I shifted my thoughts to what I can control and do versus what I can't. </label>
+                <label htmlFor='thoughts'>I shifted my thoughts to what I can control and do versus what I can't. </label>
                 <input type='checkbox' name='thoughts' onChange={handleChecked}/>
                 <br/><br/>
-                <label>I connected with someone. </label>
+                <label htmlFor='connect'>I connected with someone. </label>
                 <input type='checkbox' name='connect' onChange={handleChecked}/>
                 <br/><br/>
-                <label>I acknowledged small wins or gratitudes. </label>
+                <label htmlFor='wins'>I acknowledged small wins or gratitudes. </label>
                 <input type='checkbox' name='wins' onChange={handleChecked}/>
                 <br/><br/>
-                <label>I asked for help when I needed it. </label>
+                <label htmlFor='help'>I asked for help when I needed it. </label>
                 <input type='checkbox' name='help' onChange={handleChecked}/>
                 <br/><br/>
-                <label>I took things one moment at a time. </label>
+                <label htmlFor='moment'>I took things one moment at a time. </label>
                 <input type='checkbox' name='moment' onChange={handleChecked}/>
                 <br/><br/>
                 {/* <label>How was your day overall? 1-100</label>

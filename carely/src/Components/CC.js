@@ -17,7 +17,9 @@ const Notepad = () => {
           rows={5}
           className="notepad"
           onChange={recalculate}
-          input type='text' name='entry' placeholder='Take a breath and start writing...'/>
+          input type='text' 
+          htmlFor='entry'
+          name='entry' placeholder='Take a breath and start writing...'/>
       </div>
     );
 }
