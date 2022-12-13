@@ -16,6 +16,7 @@ export default function Notepad() {
           rows={5}
           className="notepad"
           onChange={recalculate}
+          htmlFor='entry'
           input type='text' name='entry' placeholder='Take a breath and start writing...'/>
       </div>
     );
