@@ -7,3 +7,154 @@
   height: 200px;
   margin:auto;
 }
+
+p{
+  font-family: 'Questrial', sans-serif;
+  font-size: 30px;
+}
+
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-image: linear-gradient(#368F8B, #F3DFC1);
+  padding: 20px 80px;
+}
+
+h1{
+  font-family: 'Questrial', sans-serif;
+  font-size: 80px;
+  display: flex;
+  align-items: left;
+  color:#160F29;
+  padding: 0px 10px;
+}
+
+#navbar {
+  font-family: 'Questrial', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#navbar li {
+  list-style: none;
+  padding: 0 20px;
+  position: relative;
+}
+
+#navbar li a{
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #F3DFC1;
+  transition: 0.3s ease-in-out;
+}
+
+#navbar li a:hover{
+  color:#160F29;
+} 
+
+#navbar li a:hover::after,
+#navbar li a.active::after {
+  content: "";
+  width: 60%;
+  height: 2px;
+  background: #160F29;
+  position: absolute;
+  bottom: -5px;
+  left: 20px;
+}
+
+.components{
+  
+text-align: center;
+background: #DDBEA8;
+background-blend-mode: saturation;
+
+}
+
+body{
+  background-image: url("https://media.istockphoto.com/id/1278058065/photo/day-one-of-getting-my-life-into-gear.jpg?s=170667a&w=0&k=20&c=DZzrnnLMuu522IyosrM3l33F5hdx7nl7jVYzh8kSGDE=");
+  background-size: cover;
+}
+
+
+.checkbox{
+  background-image: linear-gradient(#368F8B, #246A73);
+  margin: auto;
+  width: 50%;
+  align-items: center;
+  border: 4px solid #246A73;
+  border-radius: 15px;
+  text-align: right;
+  padding: 15px;
+  color: white
+}
+
+.button{
+  font-family: 'Questrial', sans-serif;
+  font-size: 25px;
+  background-color: #368F8B; 
+  border-color: #246A73;
+  border-width: 4px;
+  border-radius: 10px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  padding: 12px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.entries {
+  background-image: linear-gradient(#368F8B, #DDBEA8);
+  border-color: #246A73;
+  border-width: 4px;
+  border-radius: 10px;
+  color: black;
+}  
+
+.edit {
+  background-color: #F3DFC1;
+  color: white;
+  margin-left: 450px;
+  margin-right: 450px;
+  border-style: solid;
+  border-color: white;
+}
+
+.entry { 
+  background-color: #F3DFC1;
+  color: #160F29;
+  margin-left: 450px;
+  margin-right: 450px;
+  border-style: solid;
+  border-color: white
+}
+
+/* 
+.Welcomeheader{
+  border:#160F29
+}
+
+.Welcomemessage{
+
+} */
+
+.quotes{
+  border: 4px #246A73;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+
+}
+
+/* Colorsheet
+#DDBEA8 Desert Sand
+#F3DFC1 Champagne
+#368F8B Dark Cyan
+#246A73 Ming
+#160F29 Dark Purple */
